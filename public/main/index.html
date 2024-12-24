@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback and Voting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Feedback and Voting</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="auth-section">
+            <button onclick="window.location.href = '/auth';">Logout</button>
+        </div>
+
+        <form class="feedback-form" method="POST" action="/api/feedbacks">
+            <input type="text" name="title" id="feedback-title" placeholder="Feedback Title" required>
+            <textarea id="feedback-body" name="description" placeholder="Write your feedback here..." rows="4" required></textarea>
+            <select name="category" id="category">
+                <option value="Functionality">Functionality</option>
+                <option value="Bug">Bug</option>
+                <option value="UI">UI</option>
+                <option value="Perfomance">Perfomance</option>
+            </select>
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <hr>
+
+        <div class="filters">
+            <h3>Filter Feedbacks</h3>
+            <form id="filter-form">
+                <div class="form-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter" name="category">
+                        <option value="">All Categories</option>
+                        <option value="Functionality">Functionality</option>
+                        <option value="Bug">Bug</option>
+                        <option value="UI">UI</option>
+                        <option value="Performance">Performance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status-filter">Status</label>
+                    <select id="status-filter" name="status">
+                        <option value="">All Statuses</option>
+                        <option value="Idea">Idea</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" class="filter-button">Apply Filters</button>
+            </form>
+
+            <h3>Sort Feedbacks</h3>
+            <form id="sort-form">
+                <div class="form-group">
+                    <label for="sort-by">Sort By</label>
+                    <select id="sort-by" name="sortBy">
+                        <option value="">Select</option>
+                        <option value="votes">Votes</option>
+                        <option value="date">Date</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sort-order">Order</label>
+                    <select id="sort-order" name="sortOrder">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+                <button type="submit" class="sort-button">Sort</button>
+            </form>
+        </div>
+        <hr>
+
+        <ul class="feedback-list" id="feedback-list">
+            <!-- Feedback items will be added here dynamically -->
+        </ul>
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <button class="close-button" onclick="closeModal()">&times;</button>
+                <h2>Update Feedback</h2>
+                <form id="modal-feedback-form">
+                    <input name="id" type="hidden" id="modal-feedback-id">
+                    <input name="title" type="text" id="modal-feedback-title" placeholder="Feedback Title" required>
+                    <textarea name="description" id="modal-feedback-description" placeholder="Write your feedback here..." rows="4" required></textarea>
+                    <select name="category" id="modal-feedback-category" required>
+                        <option value="Functionality">Functionality</option>
+                        <option value="Bug">Bug</option>
+                        <option value="UI">UI</option>
+                        <option value="Performance">Performance</option>
+                    </select>
+                    <button type="submit">Update Feedback</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

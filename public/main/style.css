@@ -1,0 +1,285 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+    color: #333;
+}
+
+header {
+    background-color: #3b82f6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.auth-section {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.auth-section button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-section button:hover {
+    background-color: #2563eb;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #3b82f6;
+}
+
+.filters form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filters .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters .form-group label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.filters select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.filters button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #2563eb;
+}
+
+.feedback-form {
+    margin-bottom: 20px;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.feedback-form button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background-color: #2563eb;
+}
+
+.feedback-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feedback-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9fafb;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.feedback-item:hover {
+    transform: translateY(-3px);
+}
+
+.feedback-item h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #3b82f6;
+}
+
+.feedback-item p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.feedback-item .votes {
+    display: flex;
+    align-items: center;
+}
+
+.feedback-item .votes button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #3b82f6;
+}
+
+.feedback-item .votes button:hover {
+    color: #2563eb;
+}
+
+.feedback-item .votes span {
+    margin: 0 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.feedback-item .author {
+    display: flex;
+    gap: 10px;
+}
+
+.feedback-item .author button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-item .author .update {
+    background-color: #10b981;
+    color: white;
+}
+
+.feedback-item .author .update:hover {
+    background-color: #059669;
+}
+
+.feedback-item .author .delete {
+    background-color: #ef4444;
+    color: white;
+}
+
+.feedback-item .author .delete:hover {
+    background-color: #dc2626;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #ef4444;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #dc2626;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+hr {
+    margin-top: 50px;
+}
